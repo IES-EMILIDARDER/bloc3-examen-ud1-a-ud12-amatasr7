@@ -16,7 +16,7 @@ public class Main3 implements incrementaPreu{
                 new Vehicle("7890-VWX", "Renault", "Clio", 2012, 9000)
         );
         List<Vehicle> preuAument = vehicles.stream()
-                .incrementarPreu2(v, 1.10 -> v.getPreu() * 1.10)
+                .map(incrementaPreu2.apply(v.getPreu()), 1.10)
                 .collect(Collectors.toList());
         
         System.out.println(preuAument);
