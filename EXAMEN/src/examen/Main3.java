@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Main3 implements incrementaPreu{
+public class Main3{
 
     public static void main(String[] args) {
 
@@ -15,10 +15,11 @@ public class Main3 implements incrementaPreu{
                 new Vehicle("3456-STU", "Tesla", "Model 3", 2022, 40000),
                 new Vehicle("7890-VWX", "Renault", "Clio", 2012, 9000)
         );
-        List<Vehicle> preuAument = vehicles.stream()
-                .map(incrementaPreu2.apply(v.getPreu()), 1.10)
+        List<Double> preuAument = vehicles.stream()
+                .map(p -> p.getPreu()*1.10)
                 .collect(Collectors.toList());
         
         System.out.println(preuAument);
     }
 }
+
